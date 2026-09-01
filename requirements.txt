@@ -1,0 +1,23 @@
+anthropic>=0.40
+openai>=1.40            # optional provider
+python-dotenv
+pyyaml
+pandas
+numpy
+scipy
+matplotlib
+tqdm
+tenacity
+diskcache
+httpx
+pytest
+datasets
+sentence-transformers
+scikit-learn            # agglomerative clustering in src/consolidate.py (also a sentence-transformers dep)
+transformers
+torch
+rouge-score
+bert-score
+beautifulsoup4
+lxml
+pypdf                   # manual-fallback ingest of ReliefWeb PDF attachments
