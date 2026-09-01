@@ -1,0 +1,13 @@
+scope,event,metric,coefficient,rho,p_value,ci_lo,ci_hi,n,n_bootstrap,seed,completeness_column
+pooled,,rouge_l_f,spearman,-0.2721,0.077553,-0.5627,0.0852,43,1000,17,completeness
+pooled,,rouge_l_f,kendall,-0.211,0.060169,-0.4522,0.0638,43,1000,17,completeness
+pooled,,bertscore_f1,spearman,-0.4387,0.003255,-0.6518,-0.1722,43,1000,17,completeness
+pooled,,bertscore_f1,kendall,-0.3083,0.006056,-0.4889,-0.1079,43,1000,17,completeness
+pooled,,llm_judge_score,spearman,-0.3748,0.013268,-0.5965,-0.0964,43,1000,17,completeness
+pooled,,llm_judge_score,kendall,-0.2987,0.016658,-0.4917,-0.0734,43,1000,17,completeness
+event,hurricane-maria-2017,rouge_l_f,spearman,-0.2721,0.077553,-0.5627,0.0852,43,1000,17,completeness
+event,hurricane-maria-2017,rouge_l_f,kendall,-0.211,0.060169,-0.4522,0.0638,43,1000,17,completeness
+event,hurricane-maria-2017,bertscore_f1,spearman,-0.4387,0.003255,-0.6518,-0.1722,43,1000,17,completeness
+event,hurricane-maria-2017,bertscore_f1,kendall,-0.3083,0.006056,-0.4889,-0.1079,43,1000,17,completeness
+event,hurricane-maria-2017,llm_judge_score,spearman,-0.3748,0.013268,-0.5965,-0.0964,43,1000,17,completeness
+event,hurricane-maria-2017,llm_judge_score,kendall,-0.2987,0.016658,-0.4917,-0.0734,43,1000,17,completeness

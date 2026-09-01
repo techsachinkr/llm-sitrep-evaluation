@@ -1,0 +1,32 @@
+{
+  "reviewer": "anonymous author",
+  "review_date": "2026-08-31",
+  "review_status": "all 100 sampled items reviewed against private contexts",
+  "strata": {
+    "stream_absent": {
+      "default_label": "confirmed_absent",
+      "exceptions": {
+        "A01": "missed_rounded_equivalent",
+        "A07": "ocr_tokenization_error",
+        "A14": "non_substantive_extraction",
+        "A15": "non_substantive_extraction",
+        "A34": "contact_number_extraction"
+      }
+    },
+    "official_exact_match": {
+      "default_label": "coincidental_match",
+      "exceptions": {
+        "O01": "semantic_match",
+        "O02": "semantic_match",
+        "O14": "semantic_match",
+        "O20": "semantic_match"
+      }
+    },
+    "machine_exact_match": {
+      "default_label": "semantic_match",
+      "exceptions": {
+        "G11": "coincidental_match"
+      }
+    }
+  }
+}

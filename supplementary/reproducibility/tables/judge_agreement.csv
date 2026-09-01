@@ -1,0 +1,4 @@
+event,judge_1,judge_2,item_unit,category_treatment,missing_rule,n_items,raters_per_item,observed_agreement,chance_agreement,fleiss_kappa
+cyclone-idai-2019,gpt-5.6-luna,gemini-3.7-flash,document-slot,nominal-unweighted,complete-case,2351,2,0.82986,0.510148,0.65267
+hurricane-irma-2017,gpt-5.6-luna,gemini-3.7-flash,document-slot,nominal-unweighted,complete-case,1005,2,0.79602,0.424425,0.645607
+hurricane-maria-2017,gpt-5.6-luna,gemini-3.7-flash,document-slot,nominal-unweighted,complete-case,1020,2,0.831373,0.423908,0.707291

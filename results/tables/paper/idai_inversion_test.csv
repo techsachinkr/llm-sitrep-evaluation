@@ -1,0 +1,2 @@
+event,judge,machine_arm,n_machine,n_human,machine_mean,human_mean,difference,difference_ci_lo,difference_ci_hi,permutation_p_two_sided,n_bootstrap,n_permutations,seed
+cyclone-idai-2019,gemini-3.7-flash,api-strong/schema_guided,26,56,0.826923,0.820833,0.00609,-0.049038,0.059066,0.852291,10000,100000,17

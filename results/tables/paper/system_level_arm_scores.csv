@@ -1,0 +1,13 @@
+event,completeness_judge,arm,n_documents,completeness_rank,completeness,rouge_l_f,bertscore_f1,llm_judge_score,generic_judge_model
+cyclone-idai-2019,gemini-3.7-flash,api-strong/schema_guided,26,1,0.826923,0.119112,0.805085,7.576923,google/gemini-3.7-flash
+cyclone-idai-2019,gemini-3.7-flash,api-fast/schema_guided,25,2,0.817333,0.122408,0.811076,7.2,google/gemini-3.7-flash
+cyclone-idai-2019,gemini-3.7-flash,api-strong/generic,26,3,0.744872,0.122235,0.820785,7.846154,google/gemini-3.7-flash
+cyclone-idai-2019,gemini-3.7-flash,api-fast/generic,25,4,0.721333,0.123188,0.824084,6.92,google/gemini-3.7-flash
+hurricane-irma-2017,gpt-5.6-luna,api-strong/schema_guided,12,1,0.763889,0.084908,0.7837,6.0,google/gemini-3.7-flash
+hurricane-irma-2017,gpt-5.6-luna,api-fast/schema_guided,12,2,0.755556,0.094533,0.788017,5.416667,google/gemini-3.7-flash
+hurricane-irma-2017,gpt-5.6-luna,api-strong/generic,12,3,0.65,0.083492,0.800867,7.666667,google/gemini-3.7-flash
+hurricane-irma-2017,gpt-5.6-luna,api-fast/generic,12,4,0.622222,0.088067,0.801175,6.416667,google/gemini-3.7-flash
+hurricane-maria-2017,gpt-5.6-luna,api-strong/schema_guided,10,1,0.75,0.11125,0.80078,7.1,google/gemini-3.7-flash
+hurricane-maria-2017,gpt-5.6-luna,api-fast/schema_guided,11,2,0.739394,0.116473,0.795582,5.454545,google/gemini-3.7-flash
+hurricane-maria-2017,gpt-5.6-luna,api-strong/generic,11,3,0.663636,0.114773,0.811218,8.090909,google/gemini-3.7-flash
+hurricane-maria-2017,gpt-5.6-luna,api-fast/generic,11,4,0.633333,0.118836,0.812282,7.181818,google/gemini-3.7-flash

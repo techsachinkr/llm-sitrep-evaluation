@@ -1,0 +1,9 @@
+event,day,model,arm,n_machine_figures,n_human_figures,n_overlap,precision,recall,casualty_recall,jaccard
+puebla-mexico-earthquake-2017,2017-09-20,api-fast,generic,26,21,4,0.16,0.2353,0.375,0.1053
+puebla-mexico-earthquake-2017,2017-09-20,api-fast,schema_guided,67,21,5,0.1429,0.2941,0.5,0.1064
+puebla-mexico-earthquake-2017,2017-09-20,api-strong,generic,24,21,4,0.1739,0.2353,0.5,0.1111
+puebla-mexico-earthquake-2017,2017-09-20,api-strong,schema_guided,40,21,4,0.1905,0.2353,0.5,0.1176
+puebla-mexico-earthquake-2017,2017-09-21,api-fast,generic,25,31,5,0.2174,0.1786,0.2308,0.1087
+puebla-mexico-earthquake-2017,2017-09-21,api-fast,schema_guided,45,31,6,0.1935,0.2143,0.3077,0.1132
+puebla-mexico-earthquake-2017,2017-09-21,api-strong,generic,20,31,5,0.2778,0.1786,0.3077,0.122
+puebla-mexico-earthquake-2017,2017-09-21,api-strong,schema_guided,27,31,3,0.1579,0.1071,0.2308,0.0682

@@ -1,0 +1,176 @@
+# FROZEN SCHEMA — adjudicated by a human (CLAUDE.md rule 4). Judging and the
+# schema_guided generation arm read this file and only this file.
+
+schema_version: 1
+approved_by: Sachin Kumar
+approved_at: '2026-08-30T18:47:41+00:00'
+source_file: schema\schema_review.yaml
+n_slots: 15
+validation_overridden: false
+slots:
+- id: currency_and_metadata
+  name: Data currency and report metadata
+  definition: The report states the date its figures are current as of, identifies
+    itself (issuing agency, series or update number, publication date), indicates
+    when the next issue is due, and gives contacts for follow-up. Filled when the
+    report makes its own recency and provenance explicit.
+  examples:
+  - As of 14 March 2025, 23,000 people were displaced in the fictional coastal province
+    of Belmara following the cyclone.
+  - Figures on affected households are current as of 06:00 local time on 9 November
+    2024.
+  prevalence: 0.8393
+- id: sourcing
+  name: Sourcing and attribution
+  definition: A figure or claim is explicitly attributed to a named source — a government
+    body, UN agency, cluster, assessment or named official — typically via 'according
+    to', 'reported by' or a parenthetical source. Filled only when the attribution
+    names who the information came from.
+  examples:
+  - According to the National Emergency Management Agency, 2,300 homes were damaged
+    by the cyclone in the coastal district.
+  - The provincial health ministry reported that 45 cases of cholera have been confirmed
+    in the Bellford region over the past week.
+  prevalence: 0.8036
+- id: casualties
+  name: Casualty and affected-population figures
+  definition: Quantitative counts of people killed, injured or missing, and/or the
+    number of people affected by the disaster overall, usually with a source and an
+    as-of date.
+  examples:
+  - As of 14 March, Tropical Cyclone Zara has killed 47 people, injured 312, and left
+    18 missing across the island, according to the National Disaster Management Agency.
+  - The earthquake in the fictional State of Northland has caused 89 deaths, 410 injuries,
+    and destroyed 2,300 homes, reports the Red Cross.
+  prevalence: 0.7857
+- id: displacement
+  name: Displacement and accommodation sites
+  definition: Numbers of displaced people and their distribution across accommodation
+    centres, collective sites or host communities, including site counts and locations.
+  examples:
+  - As of 18 March, 12,400 people are displaced across 15 collective sites in the
+    Ayala region, with 3,200 sheltering in schools and 2,100 in transit centers.
+  - Following the Tila River floods, 6,700 displaced people are recorded in 14 collective
+    sites; 3,100 are in tented camps and 1,200 are staying with host families.
+  prevalence: 0.7321
+- id: health
+  name: Health, disease outbreak and nutrition
+  definition: Case and death counts for disease outbreaks (notably cholera and malaria),
+    vaccination campaign plans, coverage and results, and nutrition screening or treatment
+    caseloads such as severe and moderate acute malnutrition admissions.
+  examples:
+  - 'Cholera outbreak in Bravia region: 342 suspected cases and 12 deaths reported
+    as of 14 March, according to health ministry surveillance.'
+  - Malaria incidence in the IDP camps increased to 189 confirmed cases this week,
+    with 3 deaths, per WHO field reports.
+  prevalence: 0.6429
+- id: damage
+  name: Physical, economic and agricultural damage
+  definition: Counts or estimates of physical destruction — houses destroyed or damaged,
+    infrastructure such as roads, bridges, power and water systems, and agricultural
+    land, crops or livestock lost — including economic damage estimates.
+  examples:
+  - Cyclone Zara destroyed 12,400 houses, partially destroyed 8,900, and flooded 3,200
+    in the coastal districts.
+  - Preliminary assessments indicate 5,000 homes completely destroyed and 15,000 damaged
+    in the earthquake-affected region.
+  prevalence: 0.625
+- id: funding
+  name: Funding status and donor contributions
+  definition: The financial requirement of an appeal or response plan and how much
+    is funded, plus named donor contributions, pledges or allocations toward it.
+  examples:
+  - For the Cyclone Zephyr response, the $34.2 million appeal is 41% funded with $14.0
+    million received against the total requirement.
+  - The Earthquake in Northern Kivara flash appeal requests $10 million and has tracked
+    $3.1 million in contributions, leaving a funding gap of 69%.
+  prevalence: 0.5893
+- id: education
+  name: Education impact and response
+  definition: Damage to schools and educational infrastructure, numbers of children
+    whose schooling is disrupted, schools used as accommodation centres, and education-sector
+    response.
+  examples:
+  - In the fictional Cyclone Zephyr response, 45 schools were flooded and 12,000 school-age
+    children have been out of school for three weeks.
+  - Following the Mount Belvedere eruption, 30 classrooms were destroyed and 5,200
+    students were relocated to temporary learning spaces.
+  prevalence: 0.4464
+- id: wash
+  name: WASH needs and response
+  definition: Water, sanitation and hygiene needs, infrastructure status, and response
+    activities including people reached with safe water, latrines, or hygiene kits.
+  examples:
+  - Following the earthquake in the fictional Kalunda region, WASH actors trucked
+    1.2 million litres of safe water to displacement sites and installed 400 emergency
+    latrines, reaching 25,000 people.
+  - WASH assessments in the flood-affected Nidra delta found that 40% of water points
+    are contaminated and 70% of households lack soap, prompting hygiene promotion
+    campaigns targeting 15,000 families.
+  prevalence: 0.4286
+- id: food
+  name: Food security and assistance reach
+  definition: Numbers of people targeted or reached with food assistance, including
+    modality (in-kind, cash, vouchers), tonnage distributed, and food-security outlook
+    where reported.
+  examples:
+  - As of 14 March, 32,000 people in Kandara Province have received in-kind food rations
+    covering 60 percent of their monthly caloric needs.
+  - Partners plan to reach 90,000 flood-affected individuals in the Meroe Delta with
+    10-day emergency food baskets and cash transfers for fresh food.
+  prevalence: 0.4286
+- id: access
+  name: Access constraints
+  definition: Physical, logistical or security barriers limiting movement or humanitarian
+    access — cut roads, flooded areas, damaged bridges, airstrip status, insecurity
+    — and which locations remain unreachable or reachable only by air or boat.
+  examples:
+  - Flooding has washed out the main bridge on Route 9 and left three mountain villages
+    cut off from road access.
+  - Checkpoints and ongoing insecurity along the northern corridor are restricting
+    humanitarian movements to the affected districts.
+  prevalence: 0.3929
+- id: coordination
+  name: Coordination arrangements
+  definition: The structures running the response — cluster activation, coordination
+    hubs, government leadership, civil-military arrangements, assessment mechanisms
+    and who leads what.
+  examples:
+  - Following the eruption of Mount Kaelor, a humanitarian coordination forum was
+    activated under the joint leadership of the national disaster management agency
+    and OCHA.
+  - In response to the flooding in the fictional region of Teshara, sectoral coordination
+    clusters were established for health, shelter, and logistics, chaired by relevant
+    government ministries.
+  prevalence: 0.375
+- id: needs_gaps
+  name: Sector needs and gaps
+  definition: Unmet humanitarian needs, priority shortfalls, pipeline breaks or capacity
+    constraints, named against one or more sectors or clusters — what the response
+    cannot currently cover.
+  examples:
+  - In the earthquake-affected district, health partners report a critical shortage
+    of trauma kits and surgical supplies, with only two functional hospitals remaining.
+  - The food security cluster identifies 40,000 people in need of emergency food assistance,
+    but access constraints and a funding shortfall limit immediate distribution.
+  prevalence: 0.3214
+- id: response_actions
+  name: Sector response activities
+  definition: Concrete actions delivered, under way or planned by a named cluster,
+    agency or authority, distinct from the needs those actions address.
+  examples:
+  - The WASH cluster distributed 2,500 hygiene kits and repaired 12 handpumps in flood-affected
+    districts over the past week.
+  - The health sector deployed three mobile clinics and vaccinated 8,000 children
+    against measles in the displacement camps.
+  prevalence: 0.3036
+- id: shelter
+  name: Shelter and non-food items
+  definition: Provision of emergency shelter and non-food items — households or individuals
+    reached, kits, tarpaulins or tents distributed, and shelter needs outstanding.
+  examples:
+  - In the fictional region of Bravia, 4,200 households received emergency shelter
+    kits and NFI packages during the reporting week.
+  - Humanitarian partners distributed 8,000 tarpaulins and 5,000 kitchen sets, reaching
+    31,000 individuals in affected districts of the fictional nation of Corvalis.
+  prevalence: 0.2679

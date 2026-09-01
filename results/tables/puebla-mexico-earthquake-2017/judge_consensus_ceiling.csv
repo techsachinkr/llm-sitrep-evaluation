@@ -1,0 +1,16 @@
+slot_id,human_coverage,machine_coverage_max,gap,is_ceiling
+access,0.5357,0.2917,0.244,False
+casualties,0.9286,0.9583,-0.0298,False
+coordination,0.6429,0.5,0.1429,False
+currency_and_metadata,0.9286,0.5455,0.3831,True
+damage,0.8929,0.8333,0.0595,False
+displacement,0.6429,0.2917,0.3512,False
+education,0.6071,0.4583,0.1488,False
+food,0.1071,0.2917,-0.1845,False
+funding,0.1071,0.5909,-0.4838,False
+health,0.3214,0.2917,0.0298,False
+needs_gaps,0.2857,0.625,-0.3393,False
+response_actions,0.9615,1.0,-0.0385,False
+shelter,0.4286,0.5,-0.0714,False
+sourcing,1.0,1.0,0.0,False
+wash,0.1429,0.2083,-0.0655,False

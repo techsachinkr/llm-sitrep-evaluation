@@ -1,0 +1,6 @@
+arm,n_documents,completeness,ci_lo,ci_hi,n_bootstrap,seed
+api-fast/generic,25,0.721333,0.677333,0.758667,1000,17
+api-fast/schema_guided,25,0.817333,0.768,0.857333,1000,17
+api-strong/generic,26,0.744872,0.701282,0.778205,1000,17
+api-strong/schema_guided,26,0.826923,0.783333,0.861571,1000,17
+human,56,0.820833,0.780937,0.854182,1000,17

@@ -1,0 +1,13 @@
+event,document_id,chars,truncated_completeness,untruncated_completeness,shift
+cyclone-idai-2019,manual-cyclone-idai-2019-rosea-20190408-mozambique-sitrep-6-7april-pdf,28535,0.933333,1.0,0.066667
+cyclone-idai-2019,manual-cyclone-idai-2019-rosea-20190413-mozambique-sitrep-11-12-april-for-upload-pdf,26084,0.966667,1.0,0.033333
+cyclone-idai-2019,manual-cyclone-idai-2019-rosea-20190418-mozambique-sitrep-16-as-of-18-april-2019-final,29679,0.866667,0.933333,0.066667
+cyclone-idai-2019,manual-cyclone-idai-2019-unicef-mozambique-humanitarian-situation-report-no-7-cyclone-i,28570,0.733333,0.733333,0.0
+hurricane-irma-2017,manual-hurricane-irma-2017-humanity-road-hurricane-irma-sitrep-no-3-sep-8-2017-pdf,64224,0.6,0.7,0.1
+hurricane-irma-2017,manual-hurricane-irma-2017-ocha-regional-sitrep-3-hurricane-irma-esp-20170908-1-pdf,33037,0.833333,0.933333,0.1
+hurricane-irma-2017,manual-hurricane-irma-2017-ocha-regional-sitrep-3-hurricane-irma-esp-20170908-pdf,29447,0.833333,0.933333,0.1
+hurricane-irma-2017,manual-hurricane-irma-2017-sitrep-2-huracán-irma-snu-cuba-080917-pdf,23355,0.733333,0.733333,0.0
+hurricane-maria-2017,manual-hurricane-maria-2017-171011-dom-situation-report-5-pdf,35870,0.9,0.966667,0.066667
+hurricane-maria-2017,manual-hurricane-maria-2017-20171014-dom-situation-report-6-pdf,33780,0.866667,1.0,0.133333
+hurricane-maria-2017,manual-hurricane-maria-2017-20171026-dom-situation-report-8-pdf,32495,0.866667,0.866667,0.0
+hurricane-maria-2017,manual-hurricane-maria-2017-cdema-sitrep-2-hurricane-maria-pdf,20739,0.866667,0.866667,0.0

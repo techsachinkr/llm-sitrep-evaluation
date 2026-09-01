@@ -1,0 +1,10 @@
+event,metric,rho,p_raw,n,p_holm,significant_holm_05
+cyclone-idai-2019,rouge_l_f,0.0698,0.485686,102,0.485686,0
+cyclone-idai-2019,bertscore_f1,-0.4256,8e-06,102,7.2e-05,1
+cyclone-idai-2019,llm_judge_score,0.2501,0.011243,102,0.067458,0
+hurricane-irma-2017,rouge_l_f,0.1783,0.225426,48,0.483423,0
+hurricane-irma-2017,bertscore_f1,-0.4691,0.000771,48,0.006168,1
+hurricane-irma-2017,llm_judge_score,-0.2055,0.161141,48,0.483423,0
+hurricane-maria-2017,rouge_l_f,-0.2721,0.077553,43,0.310212,0
+hurricane-maria-2017,bertscore_f1,-0.4387,0.003255,43,0.022785,1
+hurricane-maria-2017,llm_judge_score,-0.3748,0.013268,43,0.067458,0

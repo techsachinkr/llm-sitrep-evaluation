@@ -1,0 +1,9 @@
+day,model,arm,n_machine_figures,machine_figs_in_stream,machine_figs_in_human,human_figs_in_stream
+2018-08-18,api-fast,generic,48,0.875,0.0833,0.5294
+2018-08-18,api-fast,schema_guided,65,0.9077,0.0923,0.5294
+2018-08-18,api-strong,generic,60,0.8833,0.0667,0.5294
+2018-08-18,api-strong,schema_guided,63,0.8889,0.1111,0.5294
+2018-08-20,api-fast,generic,49,0.9388,0.0,0.25
+2018-08-20,api-fast,schema_guided,62,0.9355,0.0645,0.25
+2018-08-20,api-strong,generic,60,0.9333,0.0667,0.25
+2018-08-20,api-strong,schema_guided,68,0.8971,0.0588,0.25

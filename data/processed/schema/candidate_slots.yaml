@@ -1,0 +1,560 @@
+generated_at: '2026-08-30T18:20:56+00:00'
+method:
+  representation: sentence-transformers:all-MiniLM-L6-v2
+  clustering: agglomerative/average/cosine
+  threshold: 0.35
+  naming_model: coder
+n_sitreps: 56
+n_codes: 1360
+n_clusters: 382
+n_candidates: 25
+n_named_by_model: 25
+max_slots: 15
+sitrep_ids:
+- manual-cyclone-idai-2019-etc-mozambique-sitrep-10-1-pdf
+- manual-cyclone-idai-2019-iom-mozambique-cyclone-idai-response-sitrep-3-04-08-april-2019
+- manual-cyclone-idai-2019-logistics-sector-zimbabwe-situation-update-190330-pdf
+- manual-cyclone-idai-2019-mdrmz014do-pdf
+- manual-cyclone-idai-2019-mdrmz014ou2-pdf
+- manual-cyclone-idai-2019-mdrzw014dfr-pdf
+- manual-cyclone-idai-2019-mozambique-cyclone-idai-floods-situation-report-no-2-03-april
+- manual-cyclone-idai-2019-mozambique-cyclone-idai-floods-situation-report-no-3-04-april
+- manual-cyclone-idai-2019-mozambique-cylone-idai-floods-situation-report-no-1-02-april-2
+- manual-cyclone-idai-2019-mozambique-cylone-idai-floods-situation-report-no4-06april2019
+- manual-cyclone-idai-2019-mozambique-tropical-cyclones-idai-and-kenneth-emergency-appeal
+- manual-cyclone-idai-2019-rosea-20190315-mozambique-cycloneidai-flashupdate-1-pdf
+- manual-cyclone-idai-2019-rosea-20190316-tc-idai-flash-update2-pdf
+- manual-cyclone-idai-2019-rosea-20190317-mozambique-cyclone-idai-flash-update-3-1-pdf
+- manual-cyclone-idai-2019-rosea-20190317-zimbabwe-floods-flash-update-1-map-pdf
+- manual-cyclone-idai-2019-rosea-20190318-mozambique-cyclone-idai-flash-update-4-1-pdf
+- manual-cyclone-idai-2019-rosea-20190318-zimbabwe-floods-flash-update-2-pdf
+- manual-cyclone-idai-2019-rosea-20190320-mozambique-flash-update-5-pdf
+- manual-cyclone-idai-2019-rosea-20190320-mozambique-floods-flash-update-6-pdf
+- manual-cyclone-idai-2019-rosea-20190321-zimbabwe-floods-flash-update-4-pdf
+- manual-cyclone-idai-2019-rosea-20190323-mozambique-floods-flash-update-7-final-pdf
+- manual-cyclone-idai-2019-rosea-20190323-zimbabwe-floods-flash-update-5-final-pdf
+- manual-cyclone-idai-2019-rosea-20190324-mozambique-floods-flash-update-8-final-pdf
+- manual-cyclone-idai-2019-rosea-20190325-mozambique-floods-flash-update-9-final-pdf
+- manual-cyclone-idai-2019-rosea-20190326-mozambique-floods-flash-update-10-final-pdf
+- manual-cyclone-idai-2019-rosea-20190327-mozambique-floods-flash-update-11-final-pdf
+- manual-cyclone-idai-2019-rosea-20190328-mozambique-floods-flash-update-12-final-pdf
+- manual-cyclone-idai-2019-rosea-20190329-mozambique-floods-flash-update-13-final-pdf
+- manual-cyclone-idai-2019-rosea-20190330-mozambique-floods-flash-update-14-final-pdf
+- manual-cyclone-idai-2019-rosea-20190401-mozambique-floods-flash-update-15-final-pdf
+- manual-cyclone-idai-2019-rosea-20190407-mozambique-sitrep-5-6-april-pdf
+- manual-cyclone-idai-2019-rosea-20190408-mozambique-sitrep-6-7april-pdf
+- manual-cyclone-idai-2019-rosea-20190409-mozambique-sitrep-7-8-april-final-for-upload-pd
+- manual-cyclone-idai-2019-rosea-20190410-mozambique-sitrep-8-9-april-pdf
+- manual-cyclone-idai-2019-rosea-20190411-mozambique-sitrep-pdf
+- manual-cyclone-idai-2019-rosea-20190413-mozambique-sitrep-11-12-april-for-upload-pdf
+- manual-cyclone-idai-2019-rosea-20190414-mozambique-sitrep-12-13-april-pdf
+- manual-cyclone-idai-2019-rosea-20190416-mozambique-sitrep-14-15-april-for-upload-pdf
+- manual-cyclone-idai-2019-rosea-20190418-mozambique-sitrep-16-as-of-18-april-2019-final
+- manual-cyclone-idai-2019-rosea-20190420-mozambique-sitrep17-as-of-20april2019-for-uploa
+- manual-cyclone-idai-2019-rosea-20190422-mozambique-sitrep-18-as-of-22-april-2019-pdf
+- manual-cyclone-idai-2019-rosea-20190429-mozambique-sitrep-19-as-of-29-april-2019-for-up
+- manual-cyclone-idai-2019-rosea-20190506-mozambique-sitrep-20-as-of-6-may-2019-for-uploa
+- manual-cyclone-idai-2019-rosea-20190513-mozambique-sitrep-21-as-of-13-may-2019-for-uplo
+- manual-cyclone-idai-2019-rosea-20190520-mozambique-sitrep-22-as-of-20-may-for-upload-pd
+- manual-cyclone-idai-2019-sa-cyclone-and-flooding-snapshot-10072019-pdf
+- manual-cyclone-idai-2019-sa-cyclone-and-flooding-snapshot-11032019-pdf
+- manual-cyclone-idai-2019-sa-cyclone-and-flooding-snapshot-12032019-pdf
+- manual-cyclone-idai-2019-unicef-mozambique-humanitarian-situation-report-5-cyclone-idai
+- manual-cyclone-idai-2019-unicef-mozambique-humanitarian-situation-report-no-6-as-of-19
+- manual-cyclone-idai-2019-unicef-mozambique-humanitarian-situation-report-no-7-cyclone-i
+- manual-cyclone-idai-2019-who-sitrep-6-mozambique-10-may-2019-pdf
+- manual-cyclone-idai-2019-whositrep3mozambique19april2019-pdf
+- manual-cyclone-idai-2019-zimbabwe-20190327-sitrep-1-pdf
+- manual-cyclone-idai-2019-zimbabwe-sitrep-2-10-april-2019-pdf
+- manual-cyclone-idai-2019-zimbabwe-sitrep4-24april2019-pdf
+user_checkpoint: PENDING - candidates only. The user must merge/rename/approve these into data/processed/schema.yaml
+  (CLAUDE.md rule 4).
+smoke: null
+slots:
+- slot_id: S01
+  name: source attribution
+  definition: Information, figures, or statements are explicitly attributed to a named source, such as
+    a government ministry, agency, spokesperson, or assessment report. The slot is filled when the text
+    uses attribution phrasing like 'according to' or 'reported by' along with the source's name.
+  examples:
+  - According to the National Emergency Management Agency, 2,300 homes were damaged by the cyclone in
+    the coastal district.
+  - The provincial health ministry reported that 45 cases of cholera have been confirmed in the Bellford
+    region over the past week.
+  prevalence: 0.8036
+  n_sitreps: 45
+  n_codes: 45
+  named_by: llm
+  top_codes:
+  - source-attribution
+  - attribution-convention
+  - attribution-phrases
+  - source-attribution-convention
+  - attribution-of-figures
+- slot_id: S02
+  name: data currency markers
+  definition: The text must explicitly indicate the date or time as of which the reported figures and
+    information are current, typically through phrases like 'as of' or an explicit datestamp.
+  examples:
+  - As of 14 March 2025, 23,000 people were displaced in the fictional coastal province of Belmara following
+    the cyclone.
+  - Figures on affected households are current as of 06:00 local time on 9 November 2024.
+  prevalence: 0.7857
+  n_sitreps: 44
+  n_codes: 44
+  named_by: llm
+  top_codes:
+  - as-of-date-markers
+  - as-of-date-currency
+  - as-of-date-marker
+  - data-currency-marker
+  - data-currency-markers
+- slot_id: S03
+  name: displacement and site figures
+  definition: Quantitative information on the number of displaced people and their distribution across
+    collective sites, shelters, or accommodation centers, often including site counts and caseloads.
+  examples:
+  - As of 18 March, 12,400 people are displaced across 15 collective sites in the Ayala region, with 3,200
+    sheltering in schools and 2,100 in transit centers.
+  - Following the Tila River floods, 6,700 displaced people are recorded in 14 collective sites; 3,100
+    are in tented camps and 1,200 are staying with host families.
+  prevalence: 0.7321
+  n_sitreps: 41
+  n_codes: 42
+  named_by: llm
+  top_codes:
+  - displacement-figures
+  - displacement-site-figures
+  - displaced-population-figures
+  - displacement-accommodation-figures
+  - displacement-site-caseload
+- slot_id: S04
+  name: casualty and impact figures
+  definition: Reported quantitative counts of human casualties (deaths, injuries, missing) and/or physical
+    damage (destroyed or damaged homes, infrastructure) resulting from the disaster, attributed to a source
+    and as of a date.
+  examples:
+  - As of 14 March, Tropical Cyclone Zara has killed 47 people, injured 312, and left 18 missing across
+    the island, according to the National Disaster Management Agency.
+  - The earthquake in the fictional State of Northland has caused 89 deaths, 410 injuries, and destroyed
+    2,300 homes, reports the Red Cross.
+  prevalence: 0.6964
+  n_sitreps: 39
+  n_codes: 40
+  named_by: llm
+  top_codes:
+  - casualty-figures
+  - death-toll
+  - casualty-and-damage-figures
+  - current-impact-figures
+  - death-toll-figures
+- slot_id: S05
+  name: housing damage figures
+  definition: The slot is filled when the report provides numerical counts or estimates of housing units
+    destroyed, partially destroyed, or flooded, usually with a breakdown by damage severity.
+  examples:
+  - Cyclone Zara destroyed 12,400 houses, partially destroyed 8,900, and flooded 3,200 in the coastal
+    districts.
+  - Preliminary assessments indicate 5,000 homes completely destroyed and 15,000 damaged in the earthquake-affected
+    region.
+  prevalence: 0.5
+  n_sitreps: 28
+  n_codes: 28
+  named_by: llm
+  top_codes:
+  - housing-damage-figures
+  - housing-damage
+  - housing-damage-assessment
+  - housing-damage-counts
+  - housing-damage-estimates
+- slot_id: S06
+  name: education impact and damage
+  definition: The slot is filled when the report provides information on damage to educational infrastructure,
+    the number of school-age children affected, or education disruption such as school closures.
+  examples:
+  - In the fictional Cyclone Zephyr response, 45 schools were flooded and 12,000 school-age children have
+    been out of school for three weeks.
+  - Following the Mount Belvedere eruption, 30 classrooms were destroyed and 5,200 students were relocated
+    to temporary learning spaces.
+  prevalence: 0.4464
+  n_sitreps: 25
+  n_codes: 27
+  named_by: llm
+  top_codes:
+  - education-impact-figures
+  - education-impact
+  - education-infrastructure-damage
+  - school-age-children-affected
+  - classrooms-destroyed
+- slot_id: S07
+  name: humanitarian funding status
+  definition: The slot is filled when the report states a humanitarian response plan or appeal's financial
+    requirement and its current funding level, such as committed or received contributions, funded percentage,
+    or tracking status.
+  examples:
+  - For the Cyclone Zephyr response, the $34.2 million appeal is 41% funded with $14.0 million received
+    against the total requirement.
+  - The Earthquake in Northern Kivara flash appeal requests $10 million and has tracked $3.1 million in
+    contributions, leaving a funding gap of 69%.
+  prevalence: 0.4464
+  n_sitreps: 25
+  n_codes: 26
+  named_by: llm
+  top_codes:
+  - funding-appeal-status
+  - funding-status
+  - funding-appeal-amount
+  - funding-funded-figures
+  - funding-requirement-figures
+- slot_id: S08
+  name: wash needs and response
+  definition: The slot is filled when the report provides information on water, sanitation, or hygiene
+    (WASH) needs, response activities, infrastructure status, or response reach/coverage. This includes
+    WASH challenges, service status, restoration actions, or distribution of hygiene items.
+  examples:
+  - Following the earthquake in the fictional Kalunda region, WASH actors trucked 1.2 million litres of
+    safe water to displacement sites and installed 400 emergency latrines, reaching 25,000 people.
+  - WASH assessments in the flood-affected Nidra delta found that 40% of water points are contaminated
+    and 70% of households lack soap, prompting hygiene promotion campaigns targeting 15,000 families.
+  prevalence: 0.4286
+  n_sitreps: 24
+  n_codes: 27
+  named_by: llm
+  top_codes:
+  - wash-response
+  - wash-needs
+  - wash-response-reach
+  - wash-response-and-infrastructure
+  - wash-service-status
+- slot_id: S09
+  name: food assistance reach
+  definition: To fill this slot, the report must give a figure for people reached or targeted with food
+    assistance, optionally including the type of food, modality, or geographic breakdown.
+  examples:
+  - As of 14 March, 32,000 people in Kandara Province have received in-kind food rations covering 60 percent
+    of their monthly caloric needs.
+  - Partners plan to reach 90,000 flood-affected individuals in the Meroe Delta with 10-day emergency
+    food baskets and cash transfers for fresh food.
+  prevalence: 0.4286
+  n_sitreps: 24
+  n_codes: 25
+  named_by: llm
+  top_codes:
+  - food-assistance-reach
+  - food-assistance-coverage
+  - food-assistance-figures
+  - food-assistance-modality-reach
+  - food-assistance-needs
+- slot_id: S10
+  name: disease outbreak case figures
+  definition: The slot is filled when the report provides quantitative case and/or death counts or surveillance
+    figures for disease outbreaks or epidemic-prone diseases, typically attributed to health authorities
+    or surveillance systems.
+  examples:
+  - 'Cholera outbreak in Bravia region: 342 suspected cases and 12 deaths reported as of 14 March, according
+    to health ministry surveillance.'
+  - Malaria incidence in the IDP camps increased to 189 confirmed cases this week, with 3 deaths, per
+    WHO field reports.
+  prevalence: 0.4286
+  n_sitreps: 24
+  n_codes: 24
+  named_by: llm
+  top_codes:
+  - disease-case-counts
+  - disease-outbreak-figures
+  - disease-case-figures
+  - disease-outbreak-caseload
+  - disease-outbreak-reports
+- slot_id: S11
+  name: access constraints
+  definition: The report must contain information on physical, logistical, or security barriers that limit
+    movement or humanitarian access to affected areas, such as damaged roads, blocked routes, cut-off
+    towns, or movement restrictions.
+  examples:
+  - Flooding has washed out the main bridge on Route 9 and left three mountain villages cut off from road
+    access.
+  - Checkpoints and ongoing insecurity along the northern corridor are restricting humanitarian movements
+    to the affected districts.
+  prevalence: 0.3929
+  n_sitreps: 22
+  n_codes: 22
+  named_by: llm
+  top_codes:
+  - access-constraints
+  - general-access-constraints
+  - humanitarian-access-constraints
+  - road-access-constraints
+- slot_id: S12
+  name: affected population figures
+  definition: A reported or estimated number of people affected by the disaster, including total affected,
+    displaced, or hosted populations, often attributed to a source or date.
+  examples:
+  - An estimated 12,500 people have been affected by flooding in Bellford Province, according to the regional
+    disaster agency.
+  - Local authorities report 3,200 people displaced and 800 sheltering in two transit centres after the
+    earthquake.
+  prevalence: 0.375
+  n_sitreps: 21
+  n_codes: 21
+  named_by: llm
+  top_codes:
+  - affected-population-figures
+  - affected-population-estimate
+  - affected-population-estimates
+  - affected-facilities-count
+  - affected-population-by-location
+- slot_id: S13
+  name: coordination arrangements and mechanisms
+  definition: This slot is filled when the report describes the coordination structures, leadership, mechanisms,
+    hubs, or activation procedures used to manage the humanitarian response, especially involving non-Red
+    Cross actors such as government bodies, UN agencies, clusters, or task forces.
+  examples:
+  - Following the eruption of Mount Kaelor, a humanitarian coordination forum was activated under the
+    joint leadership of the national disaster management agency and OCHA.
+  - In response to the flooding in the fictional region of Teshara, sectoral coordination clusters were
+    established for health, shelter, and logistics, chaired by relevant government ministries.
+  prevalence: 0.375
+  n_sitreps: 21
+  n_codes: 21
+  named_by: llm
+  top_codes:
+  - coordination-arrangements
+  - coordination-architecture
+  - coordination-mechanisms
+  - coordination-leadership
+  - external-coordination-mechanisms
+- slot_id: S14
+  name: report production metadata
+  definition: The report explicitly identifies its issuing agency and collaborators, publication date,
+    series/update number, and the schedule or basis for future issues.
+  examples:
+  - Situation Report No. 5 on the monsoon floods in Virelia, issued 12 August 2025 by the National Emergency
+    Operations Centre and IFRC, with the next update expected 15 August.
+  - 'Humanitarian Update #3 on the earthquake in Tandara, published 3 March 2026 by the Provincial Disaster
+    Management Agency, issued every 48 hours.'
+  prevalence: 0.3393
+  n_sitreps: 19
+  n_codes: 19
+  named_by: llm
+  top_codes:
+  - report-production-metadata
+  - report-issuance-schedule
+  - situation-report-metadata
+  - document-metadata
+  - report-identification-and-production
+- slot_id: S15
+  name: contact information
+  definition: The slot is filled when the situation report provides names, roles, phone numbers, and/or
+    email addresses for individuals or offices to contact for further information, media inquiries, or
+    mailing list requests.
+  examples:
+  - For further information, contact Maria Santos, Response Coordinator, at +123 456 7890 or msantos@example.org.
+  - Media inquiries should be directed to the joint information centre at media@cyclone-response.example
+    or +123 555 0142.
+  prevalence: 0.3214
+  n_sitreps: 18
+  n_codes: 18
+  named_by: llm
+  top_codes:
+  - contact-information
+  - contact-and-further-information
+  - contact-details
+  - contact-and-mailing-information
+- slot_id: S16
+  name: sector needs and gaps
+  definition: For this slot to count as filled, the text must identify unmet humanitarian needs, priorities,
+    shortages, or constraints within one or more specific sectors or clusters (e.g., health, WASH, shelter,
+    food security).
+  examples:
+  - In the earthquake-affected district, health partners report a critical shortage of trauma kits and
+    surgical supplies, with only two functional hospitals remaining.
+  - The food security cluster identifies 40,000 people in need of emergency food assistance, but access
+    constraints and a funding shortfall limit immediate distribution.
+  prevalence: 0.3036
+  n_sitreps: 17
+  n_codes: 18
+  named_by: llm
+  top_codes:
+  - sector-needs
+  - sectoral-needs
+  - cluster-needs
+  - sector-specific-needs
+  - cluster-gaps-constraints
+- slot_id: S17
+  name: sector response activities
+  definition: Reports actions implemented, ongoing, or planned by a specific humanitarian cluster or sector
+    in response to the emergency; must name the sector or cluster and describe concrete interventions,
+    distributions, assessments, or coordination measures.
+  examples:
+  - The WASH cluster distributed 2,500 hygiene kits and repaired 12 handpumps in flood-affected districts
+    over the past week.
+  - The health sector deployed three mobile clinics and vaccinated 8,000 children against measles in the
+    displacement camps.
+  prevalence: 0.3036
+  n_sitreps: 17
+  n_codes: 17
+  named_by: llm
+  top_codes:
+  - sector-response-activities
+  - cluster-response-activities
+  - sectoral-response-activities
+  - sector-specific-response-activities
+  - cluster-response
+- slot_id: S18
+  name: nutrition screening and treatment figures
+  definition: This slot is filled when a report provides quantitative data or summary figures on nutrition
+    screening outcomes, such as severe or moderate acute malnutrition cases identified, malnutrition caseloads
+    requiring treatment, and progress or delivery of therapeutic or supplementary feeding.
+  examples:
+  - Following Cyclone Jalana in the fictional Republic of Maren, nutrition screenings identified 1,842
+    children with severe acute malnutrition and 6,530 with moderate acute malnutrition across 14 districts.
+  - In the Lumarian earthquake response, therapeutic feeding programs admitted 2,150 children under five
+    for SAM treatment, achieving 68% of the quarterly target.
+  prevalence: 0.2857
+  n_sitreps: 16
+  n_codes: 17
+  named_by: llm
+  top_codes:
+  - nutrition-screening-results
+  - nutrition-caseload-and-treatment
+  - malnutrition-screening-results
+  - nutrition-assessment-results
+  - nutrition-malnutrition-caseload
+- slot_id: S19
+  name: sectoral gaps and constraints
+  definition: The slot is filled when a report identifies specific obstacles, unmet needs, or limitations
+    affecting a sector's or cluster's ability to deliver response activities, such as funding shortfalls,
+    staffing shortages, access problems, or operational challenges.
+  examples:
+  - In the fictional coastal flood response, the health sector reported critical shortages of medical
+    supplies and a lack of trained nurses as key constraints slowing case management.
+  - WASH cluster partners identified severe access restrictions and a $2.3 million funding gap delaying
+    the repair of damaged water networks in the affected districts.
+  prevalence: 0.2679
+  n_sitreps: 15
+  n_codes: 15
+  named_by: llm
+  top_codes:
+  - sector-gaps-constraints
+  - cluster-gaps-constraints
+  - sector-specific-gaps-constraints
+  - sectoral-gaps-constraints
+  - sector-gaps-and-constraints
+- slot_id: S20
+  name: shelter and nfi assistance
+  definition: The slot is filled when the report provides quantitative information on the provision of
+    shelter and non-food item assistance, including the number of households or individuals reached, distributions
+    delivered, or response coverage.
+  examples:
+  - In the fictional region of Bravia, 4,200 households received emergency shelter kits and NFI packages
+    during the reporting week.
+  - Humanitarian partners distributed 8,000 tarpaulins and 5,000 kitchen sets, reaching 31,000 individuals
+    in affected districts of the fictional nation of Corvalis.
+  prevalence: 0.2679
+  n_sitreps: 15
+  n_codes: 15
+  named_by: llm
+  top_codes:
+  - shelter-nfi-distribution
+  - shelter-aid-delivery
+  - shelter-and-nfi-distribution
+  - shelter-and-nfi-needs
+  - shelter-and-nfi-response
+- slot_id: S21
+  name: cholera outbreak and vaccination
+  definition: The slot is filled when a sitrep provides current cholera caseload or vaccination information,
+    such as new/cumulative case or death counts, outbreak locations, vaccination campaign coverage, or
+    vaccine supply.
+  examples:
+  - In the flood-affected state of Tandara, 412 new cholera cases and 9 deaths were reported this week,
+    while oral cholera vaccination reached 68% of the target population.
+  - As of 14 June, cumulative cholera cases in the drought-hit province of Mirena stand at 3,270 with
+    41 deaths, and 120,000 vaccine doses are due to arrive next week.
+  prevalence: 0.25
+  n_sitreps: 14
+  n_codes: 18
+  named_by: llm
+  top_codes:
+  - cholera-case-figures
+  - cholera-vaccination-coverage
+  - cholera-case-counts
+  - cholera-caseload
+  - cholera-caseload-trend
+- slot_id: S22
+  name: vaccination campaign status
+  definition: To count as filled, the report must contain information about the planning, implementation,
+    or results of a vaccination campaign, such as scheduled dates, target locations, number of people
+    vaccinated, or coverage rates.
+  examples:
+  - A typhoid vaccination campaign in the coastal town of Port Vesta vaccinated 45,000 residents, reaching
+    90% of the target population over three days.
+  - Health authorities plan to launch a diphtheria vaccination campaign in the northern camps on 18 April,
+    aiming to reach 150,000 people over two weeks.
+  prevalence: 0.25
+  n_sitreps: 14
+  n_codes: 14
+  named_by: llm
+  top_codes:
+  - vaccination-campaign-coverage
+  - vaccination-campaign-status
+  - vaccination-coverage
+  - mass-health-campaign-coverage
+  - vaccination-campaign
+- slot_id: S23
+  name: agricultural damage assessment
+  definition: Reports the extent or estimated figures of damage to agricultural land, crops, or related
+    livelihoods caused by the disaster, such as hectares affected, crop losses, or number of farmers impacted.
+  examples:
+  - The earthquake triggered landslides that buried 2,300 hectares of terraced farmland and destroyed
+    1,800 fruit trees, affecting 4,000 households dependent on agriculture.
+  - Prolonged drought caused 60% crop failure in the central region, with an estimated 85,000 hectares
+    of wheat and barley lost and 22,000 pastoralist families losing livestock.
+  prevalence: 0.2321
+  n_sitreps: 13
+  n_codes: 13
+  named_by: llm
+  top_codes:
+  - crop-damage-figures
+  - crop-damage
+  - agricultural-damage
+  - agricultural-damage-assessments
+  - agricultural-flood-impact
+- slot_id: S24
+  name: donor funding and pledges
+  definition: The report must identify at least one named donor or funding source and specify a financial
+    or in-kind contribution, pledge, or funding announcement made toward the humanitarian response.
+  examples:
+  - The Government of Novaria announced a $2.5 million contribution to support emergency shelter and WASH
+    activities in the affected provinces.
+  - The Red Crystal Society of Belmoris pledged 500 family tents and three mobile health clinics for the
+    cyclone response.
+  prevalence: 0.2143
+  n_sitreps: 12
+  n_codes: 12
+  named_by: llm
+  top_codes:
+  - donor-contributions
+  - donor-and-partner-contributions
+  - donor-contribution-announcement
+  - donor-contribution-announcements
+  - donor-funding-and-pledges
+- slot_id: S25
+  name: infrastructure and economic damage
+  definition: The slot is filled when a situation report includes descriptions of physical damage to infrastructure
+    (such as roads, bridges, buildings, power lines, or water systems) and/or monetary estimates of economic
+    losses resulting from that damage.
+  examples:
+  - The earthquake rendered 15 bridges impassable and caused an estimated $8 million in damage to public
+    buildings.
+  - Flooding destroyed three water treatment plants and left two main highways unusable, with total infrastructure
+    damage estimated at $4.2 million.
+  prevalence: 0.2143
+  n_sitreps: 12
+  n_codes: 12
+  named_by: llm
+  top_codes:
+  - infrastructure-damage
+  - economic-damage-estimate
+  - economic-damage-estimates
+  - infrastructure-damage-assessments
+  - infrastructure-damage-estimates

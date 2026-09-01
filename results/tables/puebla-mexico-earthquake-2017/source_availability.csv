@@ -1,0 +1,9 @@
+day,model,arm,n_machine_figures,machine_figs_in_stream,machine_figs_in_human,human_figs_in_stream
+2017-09-20,api-fast,generic,25,1.0,0.16,0.3529
+2017-09-20,api-fast,schema_guided,34,0.9706,0.1471,0.3529
+2017-09-20,api-strong,generic,23,0.913,0.1739,0.3529
+2017-09-20,api-strong,schema_guided,21,0.9524,0.1905,0.3529
+2017-09-21,api-fast,generic,23,0.913,0.2174,0.3704
+2017-09-21,api-fast,schema_guided,31,0.871,0.2258,0.3704
+2017-09-21,api-strong,generic,18,0.8889,0.2778,0.3704
+2017-09-21,api-strong,schema_guided,19,0.9474,0.1579,0.3704

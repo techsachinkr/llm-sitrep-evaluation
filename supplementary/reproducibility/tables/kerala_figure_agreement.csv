@@ -1,0 +1,9 @@
+event,day,model,arm,n_machine_figures,n_human_figures,n_overlap,precision,recall,casualty_recall,jaccard
+kerala-floods-2018,2018-08-18,api-fast,generic,65,27,3,0.0625,0.1765,0.3333,0.0484
+kerala-floods-2018,2018-08-18,api-fast,schema_guided,97,27,5,0.0758,0.2941,0.3333,0.0641
+kerala-floods-2018,2018-08-18,api-strong,generic,74,27,3,0.0492,0.1765,0.3333,0.04
+kerala-floods-2018,2018-08-18,api-strong,schema_guided,101,27,6,0.0938,0.3529,0.3333,0.08
+kerala-floods-2018,2018-08-20,api-fast,generic,62,20,0,0.0,0.0,0.0,0.0
+kerala-floods-2018,2018-08-20,api-fast,schema_guided,100,20,4,0.0635,0.25,0.1667,0.0533
+kerala-floods-2018,2018-08-20,api-strong,generic,83,20,4,0.0667,0.25,0.1667,0.0556
+kerala-floods-2018,2018-08-20,api-strong,schema_guided,111,20,4,0.058,0.25,0.1667,0.0494

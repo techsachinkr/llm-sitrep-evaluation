@@ -1,0 +1,7 @@
+paper_name,role,provider,public_model_id,version_or_snapshot,call_dates_utc,snapshot_note,documentation_url
+api-strong,generator; open coder; cluster namer,DeepSeek direct,deepseek-v4-pro,DeepSeek-V4-Pro GA mutable alias updated 2026-08-13,2026-08-30 to 2026-08-31,Provider exposed no immutable snapshot suffix; request log served_model matched alias.,https://api-docs.deepseek.com/updates/
+api-fast,generator,DeepSeek direct,deepseek-v4-flash,"DeepSeek-V4-Flash-0731, API update dated 2026-07-31",2026-08-30 to 2026-08-31,Provider exposed no immutable snapshot suffix; request log served_model matched alias.,https://api-docs.deepseek.com/updates/
+DeepSeek slot judge,Idai slot judge,DeepSeek direct,deepseek-v4-pro,mutable API alias,2026-08-30,served_model matched alias,https://api-docs.deepseek.com/updates/
+Luna,slot judge,OpenRouter,openai/gpt-5.6-luna,mutable router alias,2026-08-30 to 2026-08-31,served_model matched alias,https://openrouter.ai/openai/gpt-5.6-luna
+Qwen,Idai slot judge,OpenRouter,qwen/qwen3.8-flash,mutable router alias,2026-08-30,served_model matched alias,https://openrouter.ai/qwen/qwen3.8-flash
+Gemini,slot judge; generic quality judge; truncation sensitivity,OpenRouter,google/gemini-3.7-flash,mutable router alias,2026-08-31,served_model matched alias,https://openrouter.ai/google/gemini-3.7-flash

@@ -1,0 +1,155 @@
+{
+  "figure_grounding": {
+    "number_regex": "(?<![\\d.,])(?P<num>\\d{1,3}(?:[,\\u00A0 ]\\d{3})+|\\d+(?:\\.\\d+)?)(?!\\d)(?:[\\s\\u00A0]*(?P<scale>thousands|thousand|millions|billions|million|billion|crores|lakhs|crore|lakh)\\b)?(?P<pct>[\\s\\u00A0]*(?:%|per[\\s\\u00A0]?cent))?",
+    "date_exclusion_regex": "\\b\\d{4}-\\d{2}-\\d{2}\\b|\\b\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}\\b|\\b\\d{1,2}(?:st|nd|rd|th)?\\s+(?:september|february|november|december|january|october|august|march|april|june|july|sept|may|jan|feb|mar|apr|jun|jul|aug|sep|oct|nov|dec)\\.?(?:,?\\s+\\d{4})?|\\b(?:september|february|november|december|january|october|august|march|april|june|july|sept|may|jan|feb|mar|apr|jun|jul|aug|sep|oct|nov|dec)\\.?\\s+\\d{1,2}(?:st|nd|rd|th)?(?:,?\\s+\\d{4})?|\\b(?:september|february|november|december|january|october|august|march|april|june|july|sept|may|jan|feb|mar|apr|jun|jul|aug|sep|oct|nov|dec)\\.?\\s+\\d{4}\\b",
+    "scales": {
+      "thousand": 1000.0,
+      "thousands": 1000.0,
+      "million": 1000000.0,
+      "millions": 1000000.0,
+      "billion": 1000000000.0,
+      "billions": 1000000000.0,
+      "lakh": 100000.0,
+      "lakhs": 100000.0,
+      "crore": 10000000.0,
+      "crores": 10000000.0
+    },
+    "casualty_lexicon": [
+      "killed",
+      "dead",
+      "death",
+      "deaths",
+      "died",
+      "fatalities",
+      "fatality",
+      "casualties",
+      "casualty",
+      "injured",
+      "injuries",
+      "wounded",
+      "missing",
+      "unaccounted"
+    ],
+    "quantity_lexicon": [
+      "affected",
+      "displaced",
+      "evacuated",
+      "homeless",
+      "destroyed",
+      "damaged",
+      "people",
+      "persons",
+      "households",
+      "families",
+      "children",
+      "beneficiaries",
+      "in need",
+      "food insecure",
+      "sheltered",
+      "reached",
+      "cases",
+      "admitted",
+      "hectares",
+      "shelters"
+    ],
+    "context_characters": 80,
+    "clause_break_characters": ".;\n",
+    "normalization": "Remove comma, ASCII space, and NBSP; parse float; multiply scale; keep count/percent separate.",
+    "matching": "Exact equality of (unit, round(normalized_value, 6)); no relative or absolute tolerance.",
+    "deduplication": "Unique within document by the same (unit, rounded value) key.",
+    "exclusions": "Recognized dates and bare integer years 1900-2100 are removed.",
+    "summary_unit": "Official-in-stream is the arithmetic mean over unique valid event-days, because its official value is duplicated across machine arms. Other rates average same-day machine-official pairs. Undefined denominators are dropped.",
+    "uncertainty": "10,000 percentile-bootstrap resamples using random.Random(17): unique event-days for official-in-stream and valid same-day machine-official pairs for all other rates."
+  },
+  "manual_matcher_audit": {
+    "scope": "Idai, Irma, and Maria only",
+    "sampling_seed": 17,
+    "stream_absent_sample": "50 simple-random unique (event, day, unit, normalized official value) items from 1,910 regex-declared absences.",
+    "matched_sample": "25 simple-random official-stream exact matches from 174 plus 25 simple-random machine-stream exact matches from 2,845.",
+    "review": "One anonymous author checked private official/machine context and up to three same-day stream candidates; excerpts are omitted and SHA-256 hashes released.",
+    "error_intervals": "Two-sided 95% Clopper-Pearson exact binomial intervals.",
+    "released_files": [
+      "matcher_audit.csv",
+      "matcher_audit_summary.csv"
+    ]
+  },
+  "reference_pairing": {
+    "priority": "same day, then nearest report within +/-3 days; maximum 3 references",
+    "tie_break": "absolute day gap, signed day gap, document id",
+    "event_fallback": false
+  },
+  "rouge_l": {
+    "package": "rouge-score==0.1.2",
+    "implementation": "rouge_score.rouge_scorer.RougeScorer(['rougeL'], use_stemmer=True)",
+    "tokenization": "Package default: lowercase, replace non-[a-z0-9] with spaces, split, Porter stem tokens >3 chars.",
+    "multi_reference": "Return precision/recall/F1 from the reference with maximum ROUGE-L F1."
+  },
+  "bertscore": {
+    "package": "bert-score==0.3.13",
+    "model_type": "roberta-large",
+    "huggingface_revision": "722cf37b1afa9454edce342e7895e588b6ff1d59",
+    "language": "en",
+    "device": "cpu",
+    "batch_size": 8,
+    "rescale_with_baseline": false,
+    "multi_reference": "bert-score list-of-references API; maximum match per candidate"
+  },
+  "schema_induction": {
+    "sentence_transformers_package": "sentence-transformers==5.7.0",
+    "checkpoint": "sentence-transformers/all-MiniLM-L6-v2",
+    "huggingface_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "input": "code name + ' - ' + code definition",
+    "encode": {
+      "batch_size": 32,
+      "normalize_embeddings": true,
+      "convert_to_numpy": true
+    },
+    "clustering": {
+      "implementation": "sklearn.cluster.AgglomerativeClustering",
+      "metric": "precomputed cosine distance",
+      "linkage": "average",
+      "n_clusters": null,
+      "distance_threshold": 0.35
+    }
+  },
+  "human_slot_judging_input": {
+    "original_rule": "Send the first 20,000 Unicode characters, then append '\\n[...truncated...]'.",
+    "unit": "Python string character/code-point count after PDF text extraction",
+    "ceiling": "Mean observed-case C_j(d) over the 56 manifest-admitted Idai human reports.",
+    "untruncated_sensitivity": "Seed-17 sample of four >20,000-character reports per primary event; full text."
+  },
+  "human_judge_validation": {
+    "event": "cyclone-idai-2019",
+    "sample_design": "100 seed-17 slot-stratified document-slot items; 50 human-report and 50 machine-report items; all 15 slots represented.",
+    "annotator": "The anonymous schema author, who was blind to the withheld four-judge key while scoring.",
+    "labels": [
+      "absent",
+      "partial",
+      "present"
+    ],
+    "agreement": "Exact-match accuracy and unweighted nominal Cohen's kappa; linear-weighted Cohen's kappa is a sensitivity statistic. Per-label precision, recall, and F1 use one-vs-rest confusion counts with the human label as ground truth.",
+    "missing_rule": "A missing model verdict is excluded only from that judge's denominator; expected, scored, and missing counts are reported by scope.",
+    "preregistered_threshold": "Raw judge-versus-human agreement >= 0.7 on the 100-item sample (PLAN Phase 4). The plan did not specify a kappa threshold and did not apply this threshold to inter-judge Fleiss' kappa.",
+    "released_files": [
+      "tables/human_validation_pairs.csv",
+      "tables/human_validation_summary.csv"
+    ]
+  },
+  "software_versions": {
+    "bert-score": "0.3.13",
+    "rouge-score": "0.1.2",
+    "sentence-transformers": "5.7.0",
+    "scikit-learn": "1.9.0",
+    "scipy": "1.18.0",
+    "transformers": "5.15.0",
+    "numpy": "2.5.2",
+    "torch": "2.13.0",
+    "tokenizers": "0.22.2",
+    "huggingface-hub": "1.27.0"
+  },
+  "runtime": {
+    "python": "3.12.10",
+    "implementation": "CPython",
+    "platform": "Windows-10-10.0.19045-SP0"
+  }
+}

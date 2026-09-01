@@ -1,0 +1,3 @@
+event,sitrep_id,kind,model,arm,date,n_slots,n_scored,n_failed,completeness,completeness_weighted
+cyclone-idai-2019,manual-cyclone-idai-2019-etc-mozambique-sitrep-10-1-pdf,human,,human,,10,10,0,0.65,0.7358775607055288
+cyclone_idai_2019,2019-03-15__api-fast__generic,machine,api-fast,api-fast/generic,2019-03-15,10,10,0,0.25,0.29943051490943606

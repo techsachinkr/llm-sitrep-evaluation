@@ -1,0 +1,192 @@
+{
+  "format": "Exact request strings rendered with angle-bracketed sentinel payload values",
+  "replacement_rule": "Replace sentinel values only; retain every other character and instruction.",
+  "calls": [
+    {
+      "role": "open-coding",
+      "stage": "one report",
+      "system": "You are a qualitative content analyst coding professional humanitarian situation reports (OCHA, IFRC and UN agency products) for a research study.\n\nYour task is OPEN CODING, the first pass of a grounded content analysis: read ONE report and list every distinct type of information it carries. Code what this report actually contains. Do not import a checklist of what you think a sitrep ought to contain, and never invent a code for information that is absent.\n\nFor each code:\n- name: a short kebab-case noun phrase, e.g. casualty-figures, access-constraints, funding-appeal-status, needs-by-cluster-wash.\n- definition: one sentence stating what this information type IS, generalised beyond this report so it could serve as a slot definition for other reports.\n- evidence_quote: a VERBATIM span of at most 200 characters copied from the report that demonstrates the code. Copy exactly; never paraphrase or elide.\n- location: where it appears — the section heading if the report has one (e.g. \"Highlights\", \"Situation Overview\", \"Health\", \"Funding\"), otherwise one of: header metadata, opening, body, closing, footer.\n- confidence: high, medium or low — how sure you are that this is a distinct, well-evidenced information type in THIS report.\n\nGuidance:\n- One code per distinct information type. Split two things that serve different operational purposes; merge restatements of the same type.\n- Typically 8-20 codes. Prefer completeness over brevity.\n- Also code reporting CONVENTIONS the report uses: attribution phrases (\"according to ...\"), hedged or unconfirmed figures, \"as of <date>\" currency markers, revision language, figures-with-sources.\n- Output only the JSON object described by the schema.",
+      "user": "Open-code the situation report below.\n\n<report_metadata>\nEvent: <EVENT>\nSource: <SOURCE>\nDate: <DATE>\nResponse phase: <RESPONSE_PHASE>\nTitle: <REPORT_TITLE>\n</report_metadata>\n\n<report_text>\n<PROFESSIONAL_REPORT_TEXT>\n</report_text>\n\nList every distinct information type present, following the schema.",
+      "json_schema": {
+        "type": "object",
+        "properties": {
+          "codes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "definition": {
+                  "type": "string"
+                },
+                "evidence_quote": {
+                  "type": "string"
+                },
+                "location": {
+                  "type": "string"
+                },
+                "confidence": {
+                  "type": "string",
+                  "enum": [
+                    "high",
+                    "medium",
+                    "low"
+                  ]
+                }
+              },
+              "required": [
+                "name",
+                "definition",
+                "evidence_quote",
+                "location",
+                "confidence"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "codes"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "role": "schema-consolidation",
+      "stage": "name one cluster",
+      "system": "You are a qualitative content analyst consolidating open codes from professional humanitarian situation reports (OCHA/IFRC) into information SLOTS - the recurring kinds of information a practitioner expects a sitrep to carry.\nGiven one cluster of open codes, return JSON with: a short slot name (2-5 words, lower case except proper nouns), a one-or-two-sentence definition stating what must be present for the slot to count as filled, and exactly two SYNTHETIC one-line examples (invented, plausible, about a fictional disaster - never quote real text). Echo back the slot_id you were given. Name the cluster as it actually is; do not widen it to a generic catch-all.",
+      "user": "Cluster <SLOT_ID>: 1 open codes from 1 of 56 sampled situation reports (prevalence 0.02).\n\nCode names:\n- <code_name> (x1)\n\nSample code definitions:\n- <CODE_DEFINITION>\n\nReturn the JSON object for this slot, with slot_id = \"<SLOT_ID>\".",
+      "json_schema": {
+        "type": "object",
+        "properties": {
+          "slot_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "definition": {
+            "type": "string"
+          },
+          "examples": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "required": [
+          "slot_id",
+          "name",
+          "definition",
+          "examples"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "role": "generation",
+      "stage": "single/generic",
+      "system": "You are an experienced humanitarian information officer writing situation reports.",
+      "user": "Below are 1 social media posts about Event posted on <DATE>.\n\nWrite a situation report for this day.\nUse only what the material below contains; add no outside knowledge and invent no details.\n\nPosts:\n- (POST CLASS) <SOCIAL_MEDIA_POST_TEXT>",
+      "json_schema": null
+    },
+    {
+      "role": "generation",
+      "stage": "map/generic",
+      "system": "You are an experienced humanitarian information officer writing situation reports.",
+      "user": "Below are 1 social media posts about Event posted on <DATE>. This is part 1 of 2.\n\nWrite a compact factual digest of these posts as bullet points. Keep every figure, place name, organisation, time and attribution exactly as stated. Use only what the material below contains; add no outside knowledge and invent no details. Do not write the report yet.\n\nGroup related points together.\n\nPosts:\n- (POST CLASS) <SOCIAL_MEDIA_POST_TEXT>",
+      "json_schema": null
+    },
+    {
+      "role": "generation",
+      "stage": "reduce/generic",
+      "system": "You are an experienced humanitarian information officer writing situation reports.",
+      "user": "Below are 2 factual digests of social media posts about Event posted on <DATE>.\n\nWrite a situation report for this day.\nUse only what the material below contains; add no outside knowledge and invent no details.\n\nDigest 1:\n<FACTUAL_DIGEST_1>\n\nDigest 2:\n<FACTUAL_DIGEST_2>",
+      "json_schema": null
+    },
+    {
+      "role": "generation",
+      "stage": "single/schema_guided",
+      "system": "You are an experienced humanitarian information officer writing situation reports.",
+      "user": "Below are 1 social media posts about Event posted on <DATE>.\n\nWrite a situation report for this day.\nUse only what the material below contains; add no outside knowledge and invent no details.\n\nHumanitarian situation reports record the following information:\n\n- Data currency and report metadata [currency_and_metadata]: The report states the date its figures are current as of, identifies itself (issuing agency, series or update number, publication date), indicates when the next issue is due, and gives contacts for follow-up. Filled when the report makes its own recency and provenance explicit.\n- Sourcing and attribution [sourcing]: A figure or claim is explicitly attributed to a named source — a government body, UN agency, cluster, assessment or named official — typically via 'according to', 'reported by' or a parenthetical source. Filled only when the attribution names who the information came from.\n- Casualty and affected-population figures [casualties]: Quantitative counts of people killed, injured or missing, and/or the number of people affected by the disaster overall, usually with a source and an as-of date.\n- Displacement and accommodation sites [displacement]: Numbers of displaced people and their distribution across accommodation centres, collective sites or host communities, including site counts and locations.\n- Health, disease outbreak and nutrition [health]: Case and death counts for disease outbreaks (notably cholera and malaria), vaccination campaign plans, coverage and results, and nutrition screening or treatment caseloads such as severe and moderate acute malnutrition admissions.\n- Physical, economic and agricultural damage [damage]: Counts or estimates of physical destruction — houses destroyed or damaged, infrastructure such as roads, bridges, power and water systems, and agricultural land, crops or livestock lost — including economic damage estimates.\n- Funding status and donor contributions [funding]: The financial requirement of an appeal or response plan and how much is funded, plus named donor contributions, pledges or allocations toward it.\n- Education impact and response [education]: Damage to schools and educational infrastructure, numbers of children whose schooling is disrupted, schools used as accommodation centres, and education-sector response.\n- WASH needs and response [wash]: Water, sanitation and hygiene needs, infrastructure status, and response activities including people reached with safe water, latrines, or hygiene kits.\n- Food security and assistance reach [food]: Numbers of people targeted or reached with food assistance, including modality (in-kind, cash, vouchers), tonnage distributed, and food-security outlook where reported.\n- Access constraints [access]: Physical, logistical or security barriers limiting movement or humanitarian access — cut roads, flooded areas, damaged bridges, airstrip status, insecurity — and which locations remain unreachable or reachable only by air or boat.\n- Coordination arrangements [coordination]: The structures running the response — cluster activation, coordination hubs, government leadership, civil-military arrangements, assessment mechanisms and who leads what.\n- Sector needs and gaps [needs_gaps]: Unmet humanitarian needs, priority shortfalls, pipeline breaks or capacity constraints, named against one or more sectors or clusters — what the response cannot currently cover.\n- Sector response activities [response_actions]: Concrete actions delivered, under way or planned by a named cluster, agency or authority, distinct from the needs those actions address.\n- Shelter and non-food items [shelter]: Provision of emergency shelter and non-food items — households or individuals reached, kits, tarpaulins or tents distributed, and shelter needs outstanding.\n\nUse these names as section headings, in this order. Where the material holds nothing for a heading, write \"No information\" under it rather than filling it in.\n\nPosts:\n- (POST CLASS) <SOCIAL_MEDIA_POST_TEXT>",
+      "json_schema": null
+    },
+    {
+      "role": "generation",
+      "stage": "map/schema_guided",
+      "system": "You are an experienced humanitarian information officer writing situation reports.",
+      "user": "Below are 1 social media posts about Event posted on <DATE>. This is part 1 of 2.\n\nWrite a compact factual digest of these posts as bullet points. Keep every figure, place name, organisation, time and attribution exactly as stated. Use only what the material below contains; add no outside knowledge and invent no details. Do not write the report yet.\n\nGroup the digest under these headings, omitting any with nothing to report:\n\n- Data currency and report metadata [currency_and_metadata]: The report states the date its figures are current as of, identifies itself (issuing agency, series or update number, publication date), indicates when the next issue is due, and gives contacts for follow-up. Filled when the report makes its own recency and provenance explicit.\n- Sourcing and attribution [sourcing]: A figure or claim is explicitly attributed to a named source — a government body, UN agency, cluster, assessment or named official — typically via 'according to', 'reported by' or a parenthetical source. Filled only when the attribution names who the information came from.\n- Casualty and affected-population figures [casualties]: Quantitative counts of people killed, injured or missing, and/or the number of people affected by the disaster overall, usually with a source and an as-of date.\n- Displacement and accommodation sites [displacement]: Numbers of displaced people and their distribution across accommodation centres, collective sites or host communities, including site counts and locations.\n- Health, disease outbreak and nutrition [health]: Case and death counts for disease outbreaks (notably cholera and malaria), vaccination campaign plans, coverage and results, and nutrition screening or treatment caseloads such as severe and moderate acute malnutrition admissions.\n- Physical, economic and agricultural damage [damage]: Counts or estimates of physical destruction — houses destroyed or damaged, infrastructure such as roads, bridges, power and water systems, and agricultural land, crops or livestock lost — including economic damage estimates.\n- Funding status and donor contributions [funding]: The financial requirement of an appeal or response plan and how much is funded, plus named donor contributions, pledges or allocations toward it.\n- Education impact and response [education]: Damage to schools and educational infrastructure, numbers of children whose schooling is disrupted, schools used as accommodation centres, and education-sector response.\n- WASH needs and response [wash]: Water, sanitation and hygiene needs, infrastructure status, and response activities including people reached with safe water, latrines, or hygiene kits.\n- Food security and assistance reach [food]: Numbers of people targeted or reached with food assistance, including modality (in-kind, cash, vouchers), tonnage distributed, and food-security outlook where reported.\n- Access constraints [access]: Physical, logistical or security barriers limiting movement or humanitarian access — cut roads, flooded areas, damaged bridges, airstrip status, insecurity — and which locations remain unreachable or reachable only by air or boat.\n- Coordination arrangements [coordination]: The structures running the response — cluster activation, coordination hubs, government leadership, civil-military arrangements, assessment mechanisms and who leads what.\n- Sector needs and gaps [needs_gaps]: Unmet humanitarian needs, priority shortfalls, pipeline breaks or capacity constraints, named against one or more sectors or clusters — what the response cannot currently cover.\n- Sector response activities [response_actions]: Concrete actions delivered, under way or planned by a named cluster, agency or authority, distinct from the needs those actions address.\n- Shelter and non-food items [shelter]: Provision of emergency shelter and non-food items — households or individuals reached, kits, tarpaulins or tents distributed, and shelter needs outstanding.\n\nPosts:\n- (POST CLASS) <SOCIAL_MEDIA_POST_TEXT>",
+      "json_schema": null
+    },
+    {
+      "role": "generation",
+      "stage": "reduce/schema_guided",
+      "system": "You are an experienced humanitarian information officer writing situation reports.",
+      "user": "Below are 2 factual digests of social media posts about Event posted on <DATE>.\n\nWrite a situation report for this day.\nUse only what the material below contains; add no outside knowledge and invent no details.\n\nHumanitarian situation reports record the following information:\n\n- Data currency and report metadata [currency_and_metadata]: The report states the date its figures are current as of, identifies itself (issuing agency, series or update number, publication date), indicates when the next issue is due, and gives contacts for follow-up. Filled when the report makes its own recency and provenance explicit.\n- Sourcing and attribution [sourcing]: A figure or claim is explicitly attributed to a named source — a government body, UN agency, cluster, assessment or named official — typically via 'according to', 'reported by' or a parenthetical source. Filled only when the attribution names who the information came from.\n- Casualty and affected-population figures [casualties]: Quantitative counts of people killed, injured or missing, and/or the number of people affected by the disaster overall, usually with a source and an as-of date.\n- Displacement and accommodation sites [displacement]: Numbers of displaced people and their distribution across accommodation centres, collective sites or host communities, including site counts and locations.\n- Health, disease outbreak and nutrition [health]: Case and death counts for disease outbreaks (notably cholera and malaria), vaccination campaign plans, coverage and results, and nutrition screening or treatment caseloads such as severe and moderate acute malnutrition admissions.\n- Physical, economic and agricultural damage [damage]: Counts or estimates of physical destruction — houses destroyed or damaged, infrastructure such as roads, bridges, power and water systems, and agricultural land, crops or livestock lost — including economic damage estimates.\n- Funding status and donor contributions [funding]: The financial requirement of an appeal or response plan and how much is funded, plus named donor contributions, pledges or allocations toward it.\n- Education impact and response [education]: Damage to schools and educational infrastructure, numbers of children whose schooling is disrupted, schools used as accommodation centres, and education-sector response.\n- WASH needs and response [wash]: Water, sanitation and hygiene needs, infrastructure status, and response activities including people reached with safe water, latrines, or hygiene kits.\n- Food security and assistance reach [food]: Numbers of people targeted or reached with food assistance, including modality (in-kind, cash, vouchers), tonnage distributed, and food-security outlook where reported.\n- Access constraints [access]: Physical, logistical or security barriers limiting movement or humanitarian access — cut roads, flooded areas, damaged bridges, airstrip status, insecurity — and which locations remain unreachable or reachable only by air or boat.\n- Coordination arrangements [coordination]: The structures running the response — cluster activation, coordination hubs, government leadership, civil-military arrangements, assessment mechanisms and who leads what.\n- Sector needs and gaps [needs_gaps]: Unmet humanitarian needs, priority shortfalls, pipeline breaks or capacity constraints, named against one or more sectors or clusters — what the response cannot currently cover.\n- Sector response activities [response_actions]: Concrete actions delivered, under way or planned by a named cluster, agency or authority, distinct from the needs those actions address.\n- Shelter and non-food items [shelter]: Provision of emergency shelter and non-food items — households or individuals reached, kits, tarpaulins or tents distributed, and shelter needs outstanding.\n\nUse these names as section headings, in this order. Where the material holds nothing for a heading, write \"No information\" under it rather than filling it in.\n\nDigest 1:\n<FACTUAL_DIGEST_1>\n\nDigest 2:\n<FACTUAL_DIGEST_2>",
+      "json_schema": null
+    },
+    {
+      "role": "slot-judging",
+      "stage": "one document-slot",
+      "system": "You are an evaluator for humanitarian situation reports (sitreps). A schema of information slots\nwas induced from professional OCHA/IFRC sitreps. For ONE slot named in the user message, decide\nhow well the report given in the user message fills that slot.\n\nVerdicts:\n- present: the report substantively fills the slot (concrete information a responder could act on;\n  for figure-bearing slots that means figures with a source or an explicit as-of time).\n- partial: the slot is touched but thin - vague, unsourced, undated, or only one aspect of it.\n- absent: the report does not address the slot at all.\n\nRules:\n- Judge only the slot you are asked about; other slots have their own calls.\n- Judge only what the report says. Do not reward plausible-sounding prose with no content.\n- evidence: copy at most 200 characters verbatim from the report to support the verdict; use an\n  empty string when the verdict is absent.\n- confidence: 0.0-1.0, your confidence in the verdict.\n- Reply with JSON only: {\"verdict\": ..., \"evidence\": ..., \"confidence\": ...}\n\nThe full slot catalogue follows so you can tell neighbouring slots apart.\n\n\nSLOT CATALOGUE\n\n- currency_and_metadata | Data currency and report metadata: The report states the date its figures are current as of, identifies itself (issuing agency, series or update number, publication date), indicates when the next issue is due, and gives contacts for follow-up. Filled when the report makes its own recency and provenance explicit.\n    example: As of 14 March 2025, 23,000 people were displaced in the fictional coastal province of Belmara following the cyclone.\n    example: Figures on affected households are current as of 06:00 local time on 9 November 2024.\n- sourcing | Sourcing and attribution: A figure or claim is explicitly attributed to a named source — a government body, UN agency, cluster, assessment or named official — typically via 'according to', 'reported by' or a parenthetical source. Filled only when the attribution names who the information came from.\n    example: According to the National Emergency Management Agency, 2,300 homes were damaged by the cyclone in the coastal district.\n    example: The provincial health ministry reported that 45 cases of cholera have been confirmed in the Bellford region over the past week.\n- casualties | Casualty and affected-population figures: Quantitative counts of people killed, injured or missing, and/or the number of people affected by the disaster overall, usually with a source and an as-of date.\n    example: As of 14 March, Tropical Cyclone Zara has killed 47 people, injured 312, and left 18 missing across the island, according to the National Disaster Management Agency.\n    example: The earthquake in the fictional State of Northland has caused 89 deaths, 410 injuries, and destroyed 2,300 homes, reports the Red Cross.\n- displacement | Displacement and accommodation sites: Numbers of displaced people and their distribution across accommodation centres, collective sites or host communities, including site counts and locations.\n    example: As of 18 March, 12,400 people are displaced across 15 collective sites in the Ayala region, with 3,200 sheltering in schools and 2,100 in transit centers.\n    example: Following the Tila River floods, 6,700 displaced people are recorded in 14 collective sites; 3,100 are in tented camps and 1,200 are staying with host families.\n- health | Health, disease outbreak and nutrition: Case and death counts for disease outbreaks (notably cholera and malaria), vaccination campaign plans, coverage and results, and nutrition screening or treatment caseloads such as severe and moderate acute malnutrition admissions.\n    example: Cholera outbreak in Bravia region: 342 suspected cases and 12 deaths reported as of 14 March, according to health ministry surveillance.\n    example: Malaria incidence in the IDP camps increased to 189 confirmed cases this week, with 3 deaths, per WHO field reports.\n- damage | Physical, economic and agricultural damage: Counts or estimates of physical destruction — houses destroyed or damaged, infrastructure such as roads, bridges, power and water systems, and agricultural land, crops or livestock lost — including economic damage estimates.\n    example: Cyclone Zara destroyed 12,400 houses, partially destroyed 8,900, and flooded 3,200 in the coastal districts.\n    example: Preliminary assessments indicate 5,000 homes completely destroyed and 15,000 damaged in the earthquake-affected region.\n- funding | Funding status and donor contributions: The financial requirement of an appeal or response plan and how much is funded, plus named donor contributions, pledges or allocations toward it.\n    example: For the Cyclone Zephyr response, the $34.2 million appeal is 41% funded with $14.0 million received against the total requirement.\n    example: The Earthquake in Northern Kivara flash appeal requests $10 million and has tracked $3.1 million in contributions, leaving a funding gap of 69%.\n- education | Education impact and response: Damage to schools and educational infrastructure, numbers of children whose schooling is disrupted, schools used as accommodation centres, and education-sector response.\n    example: In the fictional Cyclone Zephyr response, 45 schools were flooded and 12,000 school-age children have been out of school for three weeks.\n    example: Following the Mount Belvedere eruption, 30 classrooms were destroyed and 5,200 students were relocated to temporary learning spaces.\n- wash | WASH needs and response: Water, sanitation and hygiene needs, infrastructure status, and response activities including people reached with safe water, latrines, or hygiene kits.\n    example: Following the earthquake in the fictional Kalunda region, WASH actors trucked 1.2 million litres of safe water to displacement sites and installed 400 emergency latrines, reaching 25,000 people.\n    example: WASH assessments in the flood-affected Nidra delta found that 40% of water points are contaminated and 70% of households lack soap, prompting hygiene promotion campaigns targeting 15,000 families.\n- food | Food security and assistance reach: Numbers of people targeted or reached with food assistance, including modality (in-kind, cash, vouchers), tonnage distributed, and food-security outlook where reported.\n    example: As of 14 March, 32,000 people in Kandara Province have received in-kind food rations covering 60 percent of their monthly caloric needs.\n    example: Partners plan to reach 90,000 flood-affected individuals in the Meroe Delta with 10-day emergency food baskets and cash transfers for fresh food.\n- access | Access constraints: Physical, logistical or security barriers limiting movement or humanitarian access — cut roads, flooded areas, damaged bridges, airstrip status, insecurity — and which locations remain unreachable or reachable only by air or boat.\n    example: Flooding has washed out the main bridge on Route 9 and left three mountain villages cut off from road access.\n    example: Checkpoints and ongoing insecurity along the northern corridor are restricting humanitarian movements to the affected districts.\n- coordination | Coordination arrangements: The structures running the response — cluster activation, coordination hubs, government leadership, civil-military arrangements, assessment mechanisms and who leads what.\n    example: Following the eruption of Mount Kaelor, a humanitarian coordination forum was activated under the joint leadership of the national disaster management agency and OCHA.\n    example: In response to the flooding in the fictional region of Teshara, sectoral coordination clusters were established for health, shelter, and logistics, chaired by relevant government ministries.\n- needs_gaps | Sector needs and gaps: Unmet humanitarian needs, priority shortfalls, pipeline breaks or capacity constraints, named against one or more sectors or clusters — what the response cannot currently cover.\n    example: In the earthquake-affected district, health partners report a critical shortage of trauma kits and surgical supplies, with only two functional hospitals remaining.\n    example: The food security cluster identifies 40,000 people in need of emergency food assistance, but access constraints and a funding shortfall limit immediate distribution.\n- response_actions | Sector response activities: Concrete actions delivered, under way or planned by a named cluster, agency or authority, distinct from the needs those actions address.\n    example: The WASH cluster distributed 2,500 hygiene kits and repaired 12 handpumps in flood-affected districts over the past week.\n    example: The health sector deployed three mobile clinics and vaccinated 8,000 children against measles in the displacement camps.\n- shelter | Shelter and non-food items: Provision of emergency shelter and non-food items — households or individuals reached, kits, tarpaulins or tents distributed, and shelter needs outstanding.\n    example: In the fictional region of Bravia, 4,200 households received emergency shelter kits and NFI packages during the reporting week.\n    example: Humanitarian partners distributed 8,000 tarpaulins and 5,000 kitchen sets, reaching 31,000 individuals in affected districts of the fictional nation of Corvalis.",
+      "user": "REPORT (id=<REPORT_ID>, kind=<human_OR_machine>, date=<DATE>)\n--- BEGIN REPORT ---\n<SITUATION_REPORT_TEXT>\n--- END REPORT ---\n\nScore exactly this slot:\n- currency_and_metadata | Data currency and report metadata: The report states the date its figures are current as of, identifies itself (issuing agency, series or update number, publication date), indicates when the next issue is due, and gives contacts for follow-up. Filled when the report makes its own recency and provenance explicit.\n\nReturn JSON only.",
+      "json_schema": {
+        "type": "object",
+        "properties": {
+          "verdict": {
+            "type": "string",
+            "enum": [
+              "absent",
+              "partial",
+              "present"
+            ]
+          },
+          "evidence": {
+            "type": "string",
+            "description": "verbatim span from the report (<=200 chars); empty when absent"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "required": [
+          "verdict",
+          "evidence",
+          "confidence"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "role": "generic-quality-judge",
+      "stage": "one machine report",
+      "system": "You are an experienced humanitarian information officer who reviews situation reports. You rate the overall quality of a report on a 1-10 scale and reply with JSON only.",
+      "user": "Rate the overall quality of the situation report below. It concerns the event '<EVENT>' on <DATE>.\n\nGive a single overall score from 1 (very poor) to 10 (excellent), judging how useful, clear, well organised and credible it is as a situation report.\n\nSITUATION REPORT\n----------------\n<SITUATION_REPORT_TEXT>\n----------------\n\nReply with JSON only: {\"score\": <integer 1-10>, \"justification\": \"<one or two sentences>\"}",
+      "json_schema": {
+        "type": "object",
+        "properties": {
+          "score": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10
+          },
+          "justification": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "score",
+          "justification"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ]
+}

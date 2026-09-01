@@ -1,0 +1,6 @@
+arm,is_human_ceiling,n_sitreps,n_judgements,completeness,ci_lo,ci_hi
+human,True,56,855,0.8208,0.7821,0.856
+api-strong/schema_guided,False,26,390,0.8269,0.7833,0.8616
+api-fast/schema_guided,False,25,375,0.8173,0.768,0.8573
+api-strong/generic,False,26,390,0.7449,0.7013,0.7782
+api-fast/generic,False,25,375,0.7213,0.6773,0.7587

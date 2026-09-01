@@ -1,0 +1,13 @@
+scope,event,metric,coefficient,rho,p_value,ci_lo,ci_hi,n,n_bootstrap,seed,completeness_column
+pooled,,rouge_l_f,spearman,-0.0206,0.837461,-0.2117,0.1925,102,1000,17,completeness
+pooled,,rouge_l_f,kendall,-0.0057,0.935024,-0.1456,0.1524,102,1000,17,completeness
+pooled,,bertscore_f1,spearman,-0.3948,4e-05,-0.5416,-0.2223,102,1000,17,completeness
+pooled,,bertscore_f1,kendall,-0.2717,0.000106,-0.3833,-0.1536,102,1000,17,completeness
+pooled,,llm_judge_score,spearman,0.1743,0.07971,-0.0475,0.3569,102,1000,17,completeness
+pooled,,llm_judge_score,kendall,0.1372,0.084408,-0.0385,0.2843,102,1000,17,completeness
+event,cyclone_idai_2019,rouge_l_f,spearman,-0.0206,0.837461,-0.2117,0.1925,102,1000,17,completeness
+event,cyclone_idai_2019,rouge_l_f,kendall,-0.0057,0.935024,-0.1456,0.1524,102,1000,17,completeness
+event,cyclone_idai_2019,bertscore_f1,spearman,-0.3948,4e-05,-0.5416,-0.2223,102,1000,17,completeness
+event,cyclone_idai_2019,bertscore_f1,kendall,-0.2717,0.000106,-0.3833,-0.1536,102,1000,17,completeness
+event,cyclone_idai_2019,llm_judge_score,spearman,0.1743,0.07971,-0.0475,0.3569,102,1000,17,completeness
+event,cyclone_idai_2019,llm_judge_score,kendall,0.1372,0.084408,-0.0385,0.2843,102,1000,17,completeness

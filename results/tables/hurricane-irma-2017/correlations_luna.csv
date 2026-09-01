@@ -1,0 +1,13 @@
+scope,event,metric,coefficient,rho,p_value,ci_lo,ci_hi,n,n_bootstrap,seed,completeness_column
+pooled,,rouge_l_f,spearman,0.1783,0.225426,-0.1457,0.4882,48,1000,17,completeness
+pooled,,rouge_l_f,kendall,0.1535,0.142735,-0.0996,0.4026,48,1000,17,completeness
+pooled,,bertscore_f1,spearman,-0.4691,0.000771,-0.7076,-0.1799,48,1000,17,completeness
+pooled,,bertscore_f1,kendall,-0.3604,0.000574,-0.5519,-0.1534,48,1000,17,completeness
+pooled,,llm_judge_score,spearman,-0.2055,0.161141,-0.4457,0.0552,48,1000,17,completeness
+pooled,,llm_judge_score,kendall,-0.1554,0.171019,-0.3473,0.0367,48,1000,17,completeness
+event,hurricane-irma-2017,rouge_l_f,spearman,0.1783,0.225426,-0.1457,0.4882,48,1000,17,completeness
+event,hurricane-irma-2017,rouge_l_f,kendall,0.1535,0.142735,-0.0996,0.4026,48,1000,17,completeness
+event,hurricane-irma-2017,bertscore_f1,spearman,-0.4691,0.000771,-0.7076,-0.1799,48,1000,17,completeness
+event,hurricane-irma-2017,bertscore_f1,kendall,-0.3604,0.000574,-0.5519,-0.1534,48,1000,17,completeness
+event,hurricane-irma-2017,llm_judge_score,spearman,-0.2055,0.161141,-0.4457,0.0552,48,1000,17,completeness
+event,hurricane-irma-2017,llm_judge_score,kendall,-0.1554,0.171019,-0.3473,0.0367,48,1000,17,completeness

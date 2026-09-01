@@ -1,0 +1,3 @@
+sitrep_id,event,date,model,arm,pairing_rule,n_refs,ref_ids,ref_date,day_gap,rouge_l_f,rouge_l_p,rouge_l_r,bertscore_f1,bertscore_p,bertscore_r,llm_judge_score,judge_model,version
+2019-03-15__api-fast__generic,cyclone_idai_2019,2019-03-15,api-fast,generic,none,0,,,,,,,,,,7.0,deepseek-v4-pro,refmetrics-v1
+2019-03-15__api-fast__schema_guided,cyclone_idai_2019,2019-03-15,api-fast,schema_guided,none,0,,,,,,,,,,5.0,deepseek-v4-pro,refmetrics-v1

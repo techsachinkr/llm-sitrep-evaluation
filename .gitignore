@@ -1,0 +1,30 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.llm_cache/
+results/llm_calls.jsonl
+
+# Bulk / third-party data stays out of git. Committed exceptions live under
+# data/processed/ (schema.yaml, events.yaml, audit trail, corpus stats) so every
+# paper number stays reproducible from the repo.
+data/raw/
+# social-media text NEVER enters git
+data/processed/streams/
+# ReliefWeb full text (public, but bulky; re-collectable via collect script)
+data/processed/sitreps_human/
+# generated from social text; keep out too
+data/processed/sitreps_machine/
+# judge evidence spans quote the sitreps (machine ones derive from social text)
+data/processed/judgements/
+data/processed/judgements_untruncated/
+# Manual matcher-audit worklist contains report and social-media excerpts.
+data/processed/matcher_audit_private.json
+
+# Phase 2 audit trail: slot definitions + decisions ARE committed (see data/processed/schema/),
+# but per-sitrep open codes hold verbatim ReliefWeb excerpts as evidence — keep those out.
+data/processed/schema/open_codes/
+data/processed/judgements/
+data/processed/judgements_deepseek_backup/

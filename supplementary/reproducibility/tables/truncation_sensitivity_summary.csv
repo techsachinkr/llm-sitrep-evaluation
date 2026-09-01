@@ -1,0 +1,5 @@
+scope,n_documents,mean_ceiling_shift,ci_lo,ci_hi,n_bootstrap,seed
+all,12,0.055556,0.030556,0.080556,10000,17
+cyclone-idai-2019,4,0.041667,0.016667,0.066667,10000,17
+hurricane-irma-2017,4,0.075,0.025,0.1,10000,17
+hurricane-maria-2017,4,0.05,0.0,0.1,10000,17

@@ -1,0 +1,10 @@
+event,completeness_judge,metric,unit,n_arms,rho,p_two_sided_asymptotic,inference_note
+cyclone-idai-2019,gemini-3.7-flash,rouge_l_f,generator-prompt-arm,4,-0.8,0.2,descriptive-small-n
+cyclone-idai-2019,gemini-3.7-flash,bertscore_f1,generator-prompt-arm,4,-1.0,0.0,descriptive-small-n
+cyclone-idai-2019,gemini-3.7-flash,llm_judge_score,generator-prompt-arm,4,0.4,0.6,descriptive-small-n
+hurricane-irma-2017,gpt-5.6-luna,rouge_l_f,generator-prompt-arm,4,0.0,1.0,descriptive-small-n
+hurricane-irma-2017,gpt-5.6-luna,bertscore_f1,generator-prompt-arm,4,-1.0,0.0,descriptive-small-n
+hurricane-irma-2017,gpt-5.6-luna,llm_judge_score,generator-prompt-arm,4,-0.6,0.4,descriptive-small-n
+hurricane-maria-2017,gpt-5.6-luna,rouge_l_f,generator-prompt-arm,4,-0.8,0.2,descriptive-small-n
+hurricane-maria-2017,gpt-5.6-luna,bertscore_f1,generator-prompt-arm,4,-0.8,0.2,descriptive-small-n
+hurricane-maria-2017,gpt-5.6-luna,llm_judge_score,generator-prompt-arm,4,-0.6,0.4,descriptive-small-n

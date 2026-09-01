@@ -1,0 +1,4 @@
+stratum,population_items,sample_items,sampling_seed,manual_errors,error_rate,ci_method,error_rate_ci_lo,error_rate_ci_hi,reviewer,review_date
+stream_absent,1910,50,17,5,0.1,Clopper-Pearson-exact-95,0.033275,0.218135,anonymous author,2026-08-31
+official_exact_match,174,25,17,21,0.84,Clopper-Pearson-exact-95,0.639172,0.954621,anonymous author,2026-08-31
+machine_exact_match,2845,25,17,1,0.04,Clopper-Pearson-exact-95,0.001012,0.203517,anonymous author,2026-08-31

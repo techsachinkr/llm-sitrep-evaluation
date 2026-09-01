@@ -1,0 +1,13 @@
+event,sitrep_id,kind,model,arm,date,n_slots,n_scored,n_failed,completeness,completeness_weighted
+cyclone-idai-2019,manual-cyclone-idai-2019-rosea-20190418-mozambique-sitrep-16-as-of-18-april-2019-final,human,,human,2019-04-18,15,15,0,0.9333333333333333,
+cyclone-idai-2019,manual-cyclone-idai-2019-rosea-20190413-mozambique-sitrep-11-12-april-for-upload-pdf,human,,human,2019-04-13,15,15,0,1.0,
+cyclone-idai-2019,manual-cyclone-idai-2019-unicef-mozambique-humanitarian-situation-report-no-7-cyclone-i,human,,human,2019-05-01,15,15,0,0.7333333333333333,
+cyclone-idai-2019,manual-cyclone-idai-2019-rosea-20190408-mozambique-sitrep-6-7april-pdf,human,,human,2019-04-08,15,15,0,1.0,
+hurricane-irma-2017,manual-hurricane-irma-2017-ocha-regional-sitrep-3-hurricane-irma-esp-20170908-pdf,human,,human,2017-09-08,15,15,0,0.9333333333333333,
+hurricane-irma-2017,manual-hurricane-irma-2017-ocha-regional-sitrep-3-hurricane-irma-esp-20170908-1-pdf,human,,human,2017-09-08,15,15,0,0.9333333333333333,
+hurricane-irma-2017,manual-hurricane-irma-2017-humanity-road-hurricane-irma-sitrep-no-3-sep-8-2017-pdf,human,,human,2017-09-08,15,15,0,0.7,
+hurricane-irma-2017,manual-hurricane-irma-2017-sitrep-2-huracán-irma-snu-cuba-080917-pdf,human,,human,2017-09-08,15,15,0,0.7333333333333333,
+hurricane-maria-2017,manual-hurricane-maria-2017-20171014-dom-situation-report-6-pdf,human,,human,2017-10-14,15,15,0,1.0,
+hurricane-maria-2017,manual-hurricane-maria-2017-171011-dom-situation-report-5-pdf,human,,human,2017-10-11,15,15,0,0.9666666666666667,
+hurricane-maria-2017,manual-hurricane-maria-2017-20171026-dom-situation-report-8-pdf,human,,human,2017-10-26,15,15,0,0.8666666666666667,
+hurricane-maria-2017,manual-hurricane-maria-2017-cdema-sitrep-2-hurricane-maria-pdf,human,,human,undated,15,15,0,0.8666666666666667,
